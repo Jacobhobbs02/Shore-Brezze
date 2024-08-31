@@ -1,0 +1,162 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+}
+body {
+    background-color: bisque !important;
+}
+.top-nav {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    width: auto;
+    border: 1px solid black;
+    align-items: center;
+    justify-content: space-around;
+    background-color: burlywood;
+}
+
+h3 {
+  color: black;
+  text-decoration: none;
+}
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;--bs-text-opacity: 1;
+  color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
+}
+
+textarea {
+    background-color: bisque;
+    border-style: none; 
+    border-color: Transparent; 
+    overflow: auto
+}
+/* blog css */
+
+.blog {
+    height: fit-content;
+    width: 800px;
+    border: 1px solid #000000;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 10px;
+    gap: 17.5px;
+}
+
+
+.title {
+    height: 70px;
+    width: 798px;
+    background-color: burlywood;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.bottom-nav {
+  height: 50px;
+  width: 798px;
+  background-color: burlywood;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: burlywood;
+    color: white;
+    font-size: 16px;
+    border: none;
+    font-size: larger;
+    margin-bottom: 15px;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ebc593;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block; background-color: burlywood;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: burlywood;
+    ;}
+
+/* user profile pic */
+
+#picture {
+    height: 85px;
+    width: 85px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+
+/* button  css */
+.like-button {
+  width: 50px;
+  height: 40px;
+  background-color: gainsboro;
+  border: 1px solid black;
+  border-radius: 15%;
+  margin: auto;
+}
+
+.like-button.liked {
+  background-color: red;
+}
+
+
+/* for the popup */
+
+.popup {
+  display: flex;
+  height: 200px;
+  width: 1000px;
+  background-color: bisque;
+  border: 5px solid black;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 10px;
+  left: 150px;
+}
+
+#popbutton {
+  background-color: burlywood;
+  color: white;
+  width: 200px;
+  height: 50px;
+  font-size: larger;
+  box-shadow: 5px 5px 5px black;
+  border: 1px solid black;
+}
+
+#cookie {
+  height: 100px;
+  width: 100px;
+  border: 2px solid black;
+}

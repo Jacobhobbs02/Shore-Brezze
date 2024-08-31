@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Blogscape</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <div class="top-nav">
+        <img id="picture" src="{{ url_for('static', filename='profile_pics/' + user.profile_pic) }}">
+         <h1>Blogscape</h1>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/create_blog">Make A Blog</a>
+        <a href="/profile">MyProfile</a>
+        <a href="/logout">Logout</a>
+    </div>
+    
+    {% for blog in blogs %}
+    <div class="blog">
+        <div class="title">
+            <h4>{{blog.title}} by: {{blog.user.first_name}}</h4>
+        {% if blog.user.id == user.id: %}   
+            <div class="dropdown">
+                <button class="dropbtn">...</button>
+                    <div class="dropdown-content">
+                        <a class="text-dark" href="/edit/{{ blog.id }}">Edit</a>
+                        <a class="text-dark" href="/delete/{{ blog.id }}">Delete</a>
+                    </div>
+            </div>
+          {% endif %}
+        </div>
+            <div class="content">
+            <p>{{blog.content}}</p>
+            <h9><i>Posted: {{blog.created_at}}</i></h9>
+            </div>
+        
+            <div class="bottom-nav">
+                <button id="like-button" class="like-button">Like</button>
+                <span id="like-count">0</span> likes
+            </div>
+        {% endfor %}
+        </div>
+
+        <button id="clearStorage">Clear Storage</button>
+
+        <script>
+          const clearStorageBtn = document.getElementById('clearStorage');
+        
+          clearStorageBtn.addEventListener('click', () => {
+            localStorage.clear();
+            console.log('Local storage cleared!');
+          });
+        </script>
+    <div class="popup" onclick="popUp(this)">
+        <img id="cookie" src="{{url_for('static', filename='Images/cookie.png') }}" alt="alert">
+        <p>This site makes use of third-party cookies, by clicking "I accept" you agree to the
+        <br>terms outlined in our cookie policy.</p>
+        <button id="popbutton">I Accept</button>
+    </div>
+        
+<script type="text/javascript" src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

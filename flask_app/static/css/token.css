@@ -1,0 +1,27 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+}
+body {
+    background-color: bisque !important;
+}
+.top-nav {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    width: auto;
+    border: 1px solid black;
+    align-items: center;
+    justify-content: space-around;
+    background-color: burlywood;
+}
+
+.note {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    width: auto;
+    margin: auto;
+    justify-content: center;
+    margin-top: 15%;
+}
